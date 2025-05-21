@@ -4,162 +4,174 @@ A Retrieval-Augmented Generation (RAG) based chatbot for boAt customer support t
 
 ## Overview
 
-This project implements a RAG system using ChromaDB as its vector database for storing and retrieving information, and leverages the Gemini API for both text processing and response generation. The current implementation focuses on the data ingestion pipeline and vector database setup for Task 3.
+This project implements an advanced RAG system using ChromaDB as its vector database and a multi-agent architecture for intelligent query processing and response generation. The system integrates web scraping, data processing, and a modern web interface to provide accurate customer support information.
 
 ## Features
 
-- Text preprocessing of scraped content using Google's Gemini API
-- Direct loading of scraped content to vector database (bypassing Gemini API)
-- Data validation to ensure quality of processed information
+- Multi-agent architecture for sophisticated query processing and response generation
+- Web scraping capabilities using Playwright for dynamic content
+- Text preprocessing using Google's Gemini API
+- Direct data loading pipeline for efficient processing
+- Advanced data validation and quality assurance
 - Vector database storage using ChromaDB with SentenceTransformer embeddings
-- Query classification to route questions to the appropriate information source
-- Retrieval of relevant documents based on semantic similarity
-- Basic RAG implementation for testing database functionality
+- Modern web interface with real-time chat capabilities
+- Query classification and intelligent routing
+- Comprehensive API server implementation
+- Automated testing suite for all components
 
 ## Project Structure
 
 ```
-├── data/                    # Data storage directory
+├── data/                     # Data storage directory
+│   ├── chroma/              # ChromaDB persistence
+│   └── debug/               # Debug outputs and screenshots
 ├── src/
-│   ├── chatbot/             # Chatbot core components
-│   │   └── rag_engine.py    # Core RAG implementation
-│   ├── database/
-│   │   └── vector_store.py  # ChromaDB integration
-│   └── utils/
-│       ├── data_pipeline.py # Data processing pipeline
-│       ├── data_validator.py # Data validation utilities
-│       ├── gemini_processor.py # Text processing with Gemini
-│       ├── direct_loader.py # Direct processing without Gemini
-│       └── test_pipeline.py # Test utilities
-├── test_database.py         # Test script for database functionality
-├── test_direct_loader.py    # Test script for direct loader functionality
-├── direct_load.py           # Script to run direct loading pipeline
-└── task3_runner.py          # Runner for Task 3 demonstration
+│   ├── agents/              # Multi-agent system components
+│   │   ├── agent_system.py  # Core agent system
+│   │   ├── autogen_wrapper.py # AutoGen integration
+│   │   ├── orchestrator.py  # Agent orchestration
+│   │   ├── query_analyzer.py # Query analysis
+│   │   ├── response_generator.py # Response generation
+│   │   └── retrieval_agent.py # Information retrieval
+│   ├── api/                 # API server implementation
+│   │   ├── server.py        # FastAPI server
+│   │   └── static/          # Static assets
+│   ├── backend/             # Backend services
+│   │   └── app.py          # Main application logic
+│   ├── chatbot/            # Core chatbot components
+│   │   └── rag_engine.py   # RAG implementation
+│   ├── database/           # Database interactions
+│   │   └── vector_store.py # ChromaDB integration
+│   ├── frontend/           # Web interface
+│   │   ├── index.html      # Main page
+│   │   ├── script.js       # Frontend logic
+│   │   └── styles.css      # Styling
+│   ├── scraper/            # Web scraping tools
+│   │   ├── playwright_scraper.py # Playwright implementation
+│   │   └── web_scraper.py  # Base scraper class
+│   └── utils/              # Utility functions
+│       ├── data_pipeline.py # Data processing
+│       ├── data_validator.py # Validation tools
+│       ├── direct_loader.py # Direct data loading
+│       ├── gemini_processor.py # Gemini API integration
+│       └── test_pipeline.py # Testing utilities
+├── scripts/                 # Script files and PRD
+├── tests/                  # Test files and data
+├── requirements.txt        # Project dependencies
+├── run.py                 # Main entry point
+└── .env                   # Environment configuration
 ```
 
 ## Installation
 
 1. Clone this repository:
 
-   ```
+   ```bash
    git clone https://github.com/yourusername/boat-customer-support-chatbot.git
    cd boat-customer-support-chatbot
    ```
 
 2. Create and activate a virtual environment:
 
-   ```
+   ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 3. Install dependencies:
 
-   ```
+   ```bash
    pip install -r requirements.txt
    ```
 
 4. Create a `.env` file with your API keys:
    ```
-   GOOGLE_API_KEY=your_gemini_api_key  # Only needed if using Gemini processing
+   GOOGLE_API_KEY=your_gemini_api_key
    CHROMA_PERSIST_DIRECTORY=./data/chroma
+   # Add other necessary API keys and configurations
    ```
 
 ## Usage
 
-### Setting up the Data
+### Running the Application
 
-Before using the vector database, you need to set up the data pipeline. This can be done using the included test data:
-
-```bash
-python task3_runner.py setup --test-data
-```
-
-Or with your own scraped data placed in the `data/` directory:
+Start the main application:
 
 ```bash
-python task3_runner.py setup
+python run.py
 ```
 
-### Direct Loading Without Gemini API
+This will:
 
-To bypass the Gemini API processing and load scraped content directly into the vector database:
+- Initialize the agent system
+- Start the API server
+- Launch the web interface
+- Begin processing user queries
+
+### Web Scraping
+
+To update the service center and return policy data:
+
+```bash
+python -m src.scraper.playwright_scraper
+```
+
+### Direct Data Loading
+
+To process and load data without using the Gemini API:
 
 ```bash
 python direct_load.py
 ```
 
-This process uses local text processing to:
+### Testing
 
-1. Read the scraped content from `data/scraped_content.json`
-2. Process return policy information by identifying key sections
-3. Extract service center details with their locations
-4. Generate embeddings and store them in ChromaDB
-
-To test the direct loader functionality:
-
-```bash
-python test_direct_loader.py
-```
-
-### Testing the Database
-
-To run a comprehensive test of the database functionality:
+Run the test suite:
 
 ```bash
 python test_database.py
+python test_direct_loader.py
 ```
 
-### Interactive Query Interface
+## Implementation Details
 
-To query the vector database directly:
+### Multi-Agent Architecture
 
-```bash
-python task3_runner.py query
-```
+- Orchestrator Agent: Coordinates between different specialized agents
+- Query Analyzer: Classifies and processes user queries
+- Retrieval Agent: Handles vector database interactions
+- Response Generator: Creates natural language responses
 
-### RAG Demo
+### Vector Database
 
-To test the RAG engine with the vector database:
+- ChromaDB with custom embedding functions
+- Separate collections for different types of information
+- Optimized retrieval strategies for each query type
 
-```bash
-python task3_runner.py rag --question "What is boAt's return policy for damaged items?"
-```
+### Web Interface
 
-## Task 3 Implementation Details
+- Real-time chat interface
+- Responsive design
+- Error handling and loading states
+- Session management
 
-### ChromaDB Setup
+### API Server
 
-- Implemented custom embedding function using SentenceTransformer to address NumPy 2.0 compatibility issues
-- Created separate collections for return policy and service center information
-- Set up persistence for embeddings and metadata
-
-### Embedding Strategy
-
-- Using SentenceTransformer with "all-MiniLM-L6-v2" model
-- Return policy documents are embedded as complete policy chunks
-- Service center locations are embedded with state, address, and contact information
-
-### Data Ingestion Pipeline
-
-- Process scraped data using Gemini API to structure the information
-- Alternatively, use direct loader to process data locally without API calls
-- Validate data structure and content using schema validation
-- Transform processed data into vector-ready documents
-- Load documents into appropriate ChromaDB collections
-
-### Retrieval Functions
-
-- Implemented semantic search for both return policy and service center information
-- Added query classification to route questions to the appropriate collection
-- Created metadata-enhanced results for better context in responses
+- FastAPI implementation
+- RESTful endpoints
+- WebSocket support for real-time communication
+- Comprehensive error handling
 
 ## Dependencies
 
 - Python 3.8+
 - ChromaDB
-- Google Generative AI (Gemini) - optional with direct loader
+- Playwright
+- FastAPI
+- Google Generative AI (Gemini)
 - Sentence Transformers
+- AutoGen
+- Additional requirements in requirements.txt
 
 ## License
 
@@ -170,6 +182,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - boAt Lifestyle for inspiration
 - Google for the Gemini API
 - The ChromaDB team for the vector database
+- Microsoft for the AutoGen framework
 
 ---
 
