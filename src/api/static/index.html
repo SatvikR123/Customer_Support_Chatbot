@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>boAt Customer Support Chat</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+      }
+      .chat-container {
+        width: 90%;
+        max-width: 600px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+      }
+      .chat-header {
+        background: #e52d27;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+      }
+      .message {
+        margin-bottom: 15px;
+        max-width: 80%;
+      }
+      .user-message {
+        margin-left: auto;
+        background: #e52d27;
+        color: white;
+        border-radius: 18px 18px 0 18px;
+        padding: 10px 15px;
+      }
+      .bot-message {
+        margin-right: auto;
+        background: #f1f1f1;
+        border-radius: 18px 18px 18px 0;
+        padding: 10px 15px;
+      }
+      .chat-input {
+        display: flex;
+        padding: 15px;
+        border-top: 1px solid #ddd;
+      }
+      .chat-input input {
+        flex: 1;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 30px;
+        margin-right: 10px;
+      }
+      .chat-input button {
+        background: #e52d27;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      .status {
+        text-align: center;
+        padding: 10px;
+        color: #666;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">boAt Customer Support</div>
+      <div id="status" class="status">Connecting...</div>
+      <div id="messages" class="chat-messages"></div>
+      <div class="chat-input">
+        <input
+          type="text"
+          id="message"
+          placeholder="Type your message here..."
+        />
+        <button id="send">Send</button>
+      </div>
+    </div>
+
+    <script>
+      // Generate a random conversation ID for this session
+      const conversationId = Math.random().toString(36).substring(2, 15);
+      let websocket;
+
+      // Connect to WebSocket
+      function connect() {
+        const statusEl = document.getElementById("status");
+        statusEl.textContent = "Connecting...";
+
+        // Connect to the WebSocket server
+        websocket = new WebSocket(
+          `ws://${window.location.hostname}:8000/ws/chat/${conversationId}`
+        );
+
+        // WebSocket event listeners
+        websocket.onopen = function (e) {
+          statusEl.textContent = "Connected";
+          setTimeout(() => {
+            statusEl.style.display = "none";
+          }, 2000);
+        };
+
+        websocket.onmessage = function (e) {
+          console.log("Raw message:", e.data);
+
+          try {
+            const data = JSON.parse(e.data);
+            console.log("Parsed message:", data);
+
+            // Handle different message formats
+            let messageText = null;
+
+            // Try different ways to get the message content
+            if (data && typeof data.message === "string") {
+              messageText = data.message;
+            } else if (data && typeof data === "string") {
+              messageText = data;
+            } else if (
+              data &&
+              data.sender === "bot" &&
+              typeof data.message === "string"
+            ) {
+              messageText = data.message;
+            } else if (
+              data &&
+              data.type === "response" &&
+              typeof data.message === "string"
+            ) {
+              messageText = data.message;
+            } else {
+              // If we can't find a valid message format, convert the entire data object to a string
+              console.error("Could not find message in expected format:", data);
+              messageText = JSON.stringify(data, null, 2);
+            }
+
+            // Display the message
+            addMessage(messageText, "bot");
+          } catch (error) {
+            console.error("Error parsing message:", error);
+            // Try to show raw message if JSON parsing fails
+            if (e.data && typeof e.data === "string") {
+              addMessage(e.data, "bot");
+            } else {
+              addMessage(
+                "Sorry, I encountered an error processing your request.",
+                "bot"
+              );
+            }
+          }
+        };
+
+        websocket.onclose = function (e) {
+          statusEl.textContent = "Disconnected. Reconnecting...";
+          statusEl.style.display = "block";
+          // Attempt to reconnect after a delay
+          setTimeout(connect, 2000);
+        };
+
+        websocket.onerror = function (e) {
+          statusEl.textContent = "Connection error. Reconnecting...";
+          statusEl.style.display = "block";
+          console.error("WebSocket error:", e);
+        };
+      }
+
+      // Add a message to the chat
+      function addMessage(message, sender) {
+        const messagesEl = document.getElementById("messages");
+        const messageEl = document.createElement("div");
+        messageEl.classList.add("message");
+        messageEl.classList.add(sender + "-message");
+        messageEl.textContent = message;
+        messagesEl.appendChild(messageEl);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }
+
+      // Send a message
+      function sendMessage() {
+        const messageEl = document.getElementById("message");
+        const message = messageEl.value.trim();
+
+        if (message && websocket.readyState === WebSocket.OPEN) {
+          // Add the message to the chat
+          addMessage(message, "user");
+
+          // Send the message to the server
+          websocket.send(
+            JSON.stringify({
+              message: message,
+              conversation_id: conversationId,
+            })
+          );
+
+          // Clear the input
+          messageEl.value = "";
+        }
+      }
+
+      // Event listeners
+      document.getElementById("send").addEventListener("click", sendMessage);
+      document
+        .getElementById("message")
+        .addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            sendMessage();
+          }
+        });
+
+      // Connect when the page loads
+      connect();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "boat_return_replacement_policy",
+    "text": "boAt Return and Replacement Policy:\n\nboAt offers product replacement within 7 days of delivery.\n\nProducts can be replaced under these conditions:\n1. Product received is defective\n2. Product has physical damage (reported within 24 hours of receipt)\n3. Product is not functioning properly (within 7 days of delivery)\n4. Product received is not as shown on the site or as per specifications (reported within 24 hours of receipt)\n\nProducts will NOT be replaced under these conditions:\n1. Customer is unhappy with the look/sound quality of a defect-free product\n2. Physical damage not notified within 24 hours of receiving the product\n3. Damage caused by an electrical surge or user error\n\nOrder cancellation policy:\n1. Orders already communicated to the customer and shipping initiated\n2. Orders placed under Same Day Delivery\n3. Products obtained on special occasions (limited occasion offers)\n\nSummary: Replacements are allowed within 7 days of delivery for defective or damaged products, or if the product doesn't match the website description.  Replacements are not allowed for issues with look/sound quality or user-caused damage. Cancellations are generally not allowed after shipping has begun, for same-day deliveries, or for special occasion purchases.  Refunds are not provided, but a replacement may be offered within the timeframe.",
+    "metadata": {
+      "category": "Return Policy",
+      "source_url": "https://www.boat-lifestyle.com/pages/return-policy",
+      "contains_refund_info": true,
+      "contains_cancellation_info": true
+    }
+  },
+  {
+    "id": "boat_service_center_locations",
+    "text": "boAt Service Center Information:\n\nboAt has service centers in the following states:\n- Delhi NCR\n- Punjab\n- Uttar Pradesh\n- West Bengal\n- Haryana\n- Bihar\n- Gujarat\n- Rajasthan\n- Jammu & Kashmir\n- Maharashtra\n- Assam\n- Telangana\n- Karnataka\n- Tamil Nadu\n- Kerala\n- Jharkhand\n- Odisha\n- Madhya Pradesh\n- Andhra Pradesh\n- Uttarakhand\n- Chhattisgarh\n\nHoliday Information: Service centers will remain shut on Sundays and National holidays.\n\nCustomer Support Contact:\n{'address': 'Unit no. 204 & 205, 2nd floor, D-wing & E-wing, Corporate Avenue, Andheri Ghatkopar Link Road, Mumbai, Maharashtra-400093, India', 'name': 'Manager, Imagine Marketing Limited'}",
+    "metadata": {
+      "category": "Service Centers",
+      "source_url": "https://www.boat-lifestyle.com/pages/service-center-list",
+      "state_count": 21,
+      "has_contact_info": true
+    }
+  }
+]

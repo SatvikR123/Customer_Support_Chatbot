@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://www.boat-lifestyle.com/pages/return-policy",
+    "category": "Return Policy",
+    "raw_content": "\n            boAt's Return and Replacement Policy:\n            \n            1. Replacement Timeframe:\n            - Products can be replaced within 7 days of delivery.\n            \n            2. Conditions for Replacement:\n            - The product must be defective or damaged upon arrival.\n            - The product must be in its original packaging with all accessories.\n            - The product must not have been used or damaged by the customer.\n            \n            3. Non-replaceable Conditions:\n            - Products with physical damage caused by the customer.\n            - Products with missing accessories or packaging.\n            - Products used beyond the 7-day replacement window.\n            \n            4. Cancellation Policy:\n            - Orders can be cancelled before shipment.\n            - Cancellation is not possible once the order is shipped.\n            \n            5. Refund Policy:\n            - Refunds are processed within 7-10 business days after product return.\n            - Original payment method will be used for refund.\n            ",
+    "structured_content": {
+      "replacement_timeframe": 7,
+      "replacement_conditions": [
+        "The product must be defective or damaged upon arrival.",
+        "The product must be in its original packaging with all accessories.",
+        "The product must not have been used or damaged by the customer."
+      ],
+      "non_replacement_conditions": [
+        "Products with physical damage caused by the customer.",
+        "Products with missing accessories or packaging.",
+        "Products used beyond the 7-day replacement window."
+      ],
+      "cancellation_conditions": [
+        "Orders can be cancelled before shipment.",
+        "Cancellation is not possible once the order is shipped."
+      ],
+      "return_policy_summary": "Products can be replaced within 7 days of delivery if defective or damaged upon arrival and in original condition.  Refunds are processed within 7-10 business days after return. Orders can be cancelled before shipment only."
+    }
+  },
+  {
+    "url": "https://www.boat-lifestyle.com/pages/service-centers",
+    "category": "Service Centers",
+    "raw_content": "\n            boAt Service Centers Information:\n            \n            Service Center Locations:\n            We have service centers in the following states:\n            - Delhi\n            - Maharashtra\n            - Karnataka\n            - Tamil Nadu\n            - West Bengal\n            - Telangana\n            - Uttar Pradesh\n            \n            Service Hours:\n            Monday to Saturday: 10:00 AM to 7:00 PM\n            \n            Holiday Information:\n            All centers are closed on Sundays and national holidays.\n            \n            Contact Details:\n            For service center related queries, please call our customer support at:\n            Phone: 1800-XXX-XXXX\n            Email: support@boat-lifestyle.com\n            ",
+    "structured_content": {
+      "states_with_centers": [
+        "Delhi",
+        "Maharashtra",
+        "Karnataka",
+        "Tamil Nadu",
+        "West Bengal",
+        "Telangana",
+        "Uttar Pradesh"
+      ],
+      "service_hours": "Monday to Saturday: 10:00 AM to 7:00 PM",
+      "holiday_info": "All centers are closed on Sundays and national holidays.",
+      "contact_details": {
+        "phone": "1800-XXX-XXXX",
+        "email": "support@boat-lifestyle.com"
+      }
+    }
+  }
+]

@@ -1,0 +1,62 @@
+# Environment variables
+.env
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Data files
+data/chroma/
+
+# Logs
+*.log
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Dependency directories
+node_modules/
+
+# Editor directories and files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS specific
+.DS_Store
+
+# Task files
+tasks.json
+tasks/
+
+# Editor-specific files
+.cursor/
+.roo/
+.roomodes
+.windsurfrules
+
+# Task runner files
+task*_runner.py
+
+# Test data (if needed, remove this line)
+# test_data/
+
+# Temporary files
+*.tmp
+*.temp 

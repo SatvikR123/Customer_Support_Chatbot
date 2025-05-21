@@ -1,0 +1,336 @@
+# boAt Customer Support Chatbot PRD
+
+# Overview
+The boAt Customer Support Chatbot is an AI-powered virtual assistant designed to provide immediate, accurate responses to customer inquiries about return policies and service center locations. It aims to reduce support ticket volume, improve customer satisfaction, and provide 24/7 assistance for boAt product owners seeking support information without requiring human agent intervention.
+
+# Core Features
+
+## Vector Database Information Storage
+- **What it does**: Scrapes, processes, and stores boAt's return policy documentation and service center location information in a vector database (ChromaDB)
+- **Why it's important**: Enables semantic search capabilities and ensures responses are based on up-to-date, accurate company information
+- **How it works**: Uses web scraping to extract information from provided links, processes the text, and stores embeddings in ChromaDB for efficient retrieval
+
+## Multi-agent RAG System
+- **What it does**: Implements a multi-agent system using AutoGen to coordinate different aspects of the customer support process
+- **Why it's important**: Allows for specialized handling of different query types and more sophisticated response generation
+- **How it works**: Utilizes multiple agents (query analyzer, retrieval agent, response generator) to process user inquiries, search the vector database, and formulate coherent answers
+
+## Natural Language Query Processing
+- **What it does**: Interprets natural language customer questions about return policies and service center locations
+- **Why it's important**: Allows customers to ask questions in conversational language rather than using specific formats or keywords
+- **How it works**: Uses LLM-based techniques to understand query intent, extract key information, and map to relevant knowledge areas
+
+## Response Generation
+- **What it does**: Creates clear, accurate, and helpful responses to customer inquiries based on boAt's official policies and information
+- **Why it's important**: Ensures customers receive consistent, company-approved information that resolves their questions
+- **How it works**: Uses RAG techniques to ground responses in factual information from the vector database, then formats responses conversationally
+
+## Web-based Chat Interface
+- **What it does**: Provides a simple, intuitive chat interface for customers to interact with the support bot
+- **Why it's important**: Creates an accessible entry point for users seeking support information
+- **How it works**: Uses HTML, CSS, and JavaScript for the frontend, connected to the backend via WebSockets through FastAPI
+
+# User Experience
+
+## User Personas
+1. **Product Owner Seeking Return Information**: Customer who recently purchased a boAt product and wants to understand return eligibility, process, or timeline
+2. **Customer Needing Repair Services**: Customer with a damaged/malfunctioning product looking for the nearest service center location
+3. **Potential Buyer Researching Policies**: Prospective customer evaluating boAt's customer service policies before making a purchase
+
+## Key User Flows
+1. **Return Policy Inquiry Flow**:
+   - User navigates to chat interface
+   - User types question about returns (e.g., "How do I return my earbuds?")
+   - System identifies query type, retrieves relevant information
+   - System provides specific return process details, eligibility requirements, or other requested information
+   - System offers follow-up assistance if needed
+
+2. **Service Center Location Flow**:
+   - User navigates to chat interface
+   - User asks about service centers (e.g., "Where can I repair my headphones in Mumbai?")
+   - System identifies location in query
+   - System retrieves and presents nearest service center(s) with address and contact information
+   - System offers directions or additional assistance
+
+## UI/UX Considerations
+- Clean, minimalist interface matching boAt's brand aesthetic
+- Clear indication of chatbot vs. human support capabilities
+- Mobile-responsive design for customers on various devices
+- Visual elements to enhance readability of service center information (potentially small maps)
+- Easy way to switch to human support if needed
+- Session persistence to maintain context during a support conversation
+
+# Technical Architecture
+
+## System Components
+1. **Web Scraper Module**:
+   - Python-based scraper to extract return policy information and service center data
+   - Text processing utilities to clean and structure extracted information
+   - Scheduling component for periodic information updates
+
+2. **Vector Database**:
+   - ChromaDB implementation for storing document embeddings
+   - Indexing system for efficient retrieval
+   - Schema design to separate different information categories
+
+3. **AutoGen Multi-Agent System**:
+   - Query Analysis Agent: Classifies and understands user questions
+   - Retrieval Agent: Searches vector database and retrieves relevant information
+   - Response Generation Agent: Creates human-like, accurate replies
+   - Orchestration Agent: Coordinates the workflow between agents
+
+4. **Backend Server**:
+   - FastAPI implementation for handling WebSocket connections
+   - API endpoints for chat initialization and management
+   - Integration with AutoGen agents and vector database
+
+5. **Frontend Interface**:
+   - HTML/CSS/JavaScript chat interface
+   - WebSocket client for real-time communication
+   - Response rendering and conversation history management
+   - Mobile-responsive design elements
+
+## Data Models
+1. **Return Policy Documents**:
+   - Policy titles and categories
+   - Policy text contents
+   - Metadata (source URLs, last updated timestamps)
+   - Vector embeddings for semantic search
+
+2. **Service Center Information**:
+   - Location name
+   - Complete address
+   - Contact information (phone, email)
+   - Operating hours
+   - Services offered
+   - State/region categorization
+   - Geolocation data (coordinates)
+   - Vector embeddings for location-based queries
+
+3. **Conversation Data**:
+   - User messages
+   - System responses
+   - Timestamps
+   - Session identifiers
+   - Query classification metadata
+
+## APIs and Integrations
+1. **Gemini API Integration**:
+   - Implementation using gemini-2.5-pro model
+   - Prompt engineering for different agent roles
+   - Response parsing and handling
+
+2. **WebSocket API**:
+   - Connection establishment and management
+   - Message serialization and deserialization
+   - Event handling for real-time updates
+
+3. **Internal Service APIs**:
+   - Vector database query interface
+   - Agent communication protocols
+   - Conversation state management
+
+## Infrastructure Requirements
+1. **Development Environment**:
+   - Python 3.9+ for backend components
+   - Node.js for frontend development tools
+   - Git for version control
+   - Docker for containerization
+
+2. **Deployment Environment**:
+   - Web server for hosting the frontend
+   - Application server for FastAPI backend
+   - Database server for ChromaDB
+   - Environment variable management for API keys
+
+3. **Security Considerations**:
+   - API key protection
+   - Rate limiting
+   - Input validation
+   - Data privacy measures
+
+# Development Roadmap
+
+## Phase 1: Foundation and Data Infrastructure
+1. Project setup and environment configuration
+   - Repository initialization
+   - Development environment setup
+   - Dependency management
+   - API key setup and .env configuration
+
+2. Data acquisition and processing
+   - Develop web scraper for return policy information
+   - Develop web scraper for service center locations
+   - Implement text cleaning and processing utilities
+   - Create data validation mechanisms
+
+3. Vector database implementation
+   - Set up ChromaDB
+   - Design embedding strategy
+   - Implement data ingestion pipeline
+   - Create basic retrieval functions
+
+## Phase 2: Core Backend Functionality
+1. AutoGen multi-agent system implementation
+   - Define agent roles and responsibilities
+   - Implement query analysis agent
+   - Implement retrieval agent
+   - Implement response generation agent
+   - Create agent coordination mechanisms
+
+2. RAG system development
+   - Implement context retrieval logic
+   - Develop prompt engineering templates
+   - Create response generation workflows
+   - Build evaluation mechanisms
+
+3. FastAPI backend development
+   - Implement WebSocket server
+   - Create API endpoints
+   - Integrate with AutoGen agents
+   - Implement conversation management
+
+## Phase 3: Frontend Development
+1. Basic chat interface implementation
+   - Create HTML/CSS structure
+   - Implement responsive design
+   - Develop message rendering components
+   - Style according to boAt brand guidelines
+
+2. WebSocket client integration
+   - Implement connection handling
+   - Develop message sending/receiving
+   - Create typing indicators
+   - Handle connection errors gracefully
+
+3. UI/UX enhancements
+   - Implement conversation history
+   - Add loading states and animations
+   - Create helpful UI prompts
+   - Implement error handling on frontend
+
+## Phase 4: Integration and Refinement
+1. End-to-end system integration
+   - Connect all components
+   - Implement error handling across systems
+   - Create logging and monitoring
+   - Perform initial end-to-end testing
+
+2. Response quality improvements
+   - Fine-tune prompts
+   - Enhance retrieval accuracy
+   - Improve response formatting
+   - Implement conversation context awareness
+
+3. Performance optimization
+   - Optimize database queries
+   - Enhance response time
+   - Implement caching where appropriate
+   - Address any bottlenecks
+
+## Phase 5: Testing and Deployment
+1. Comprehensive testing
+   - Unit testing for all components
+   - Integration testing
+   - User acceptance testing
+   - Performance testing
+
+2. Deployment preparation
+   - Containerization
+   - Environment configuration
+   - Documentation
+   - Deployment scripts
+
+3. Deployment and monitoring
+   - System deployment
+   - Monitoring setup
+   - Performance tracking
+   - Issue resolution process
+
+# Logical Dependency Chain
+
+## Foundation Components (Build First)
+1. Environment setup and configuration
+2. Web scraping functionality for data acquisition
+3. ChromaDB implementation and data storage
+4. Basic LLM integration with Gemini models
+
+## Core Functionality (Build Second)
+1. AutoGen agent framework implementation
+2. RAG system for knowledge retrieval
+3. Query understanding and classification
+4. Basic response generation
+
+## User Interface (Build Third)
+1. Simple chat interface frontend
+2. WebSocket client implementation
+3. Message rendering and display
+4. Basic conversation flow
+
+## Integration Layer (Build Fourth)
+1. FastAPI WebSocket server
+2. Backend-frontend connection
+3. End-to-end message flow
+4. Full conversation handling
+
+## Enhancement Components (Build Last)
+1. Improved response formatting
+2. Conversation context awareness
+3. UI/UX refinements
+4. Performance optimizations
+
+# Risks and Mitigations
+
+## Technical Challenges
+- **Risk**: Scraping complex website structures may be difficult or break with site updates
+  **Mitigation**: Implement robust selectors, regular validation checks, and fallback mechanisms
+
+- **Risk**: LLM may produce inaccurate or hallucinated responses
+  **Mitigation**: Implement strong RAG patterns, fact-checking mechanisms, and clear attribution to source information
+
+- **Risk**: Real-time WebSocket communication may face performance issues with multiple users
+  **Mitigation**: Implement connection pooling, optimize message sizes, and add load testing
+
+## MVP Risks
+- **Risk**: Scope creep extending development timeline
+  **Mitigation**: Strictly prioritize return policy and service center location features only, defer all enhancements
+
+- **Risk**: Over-engineering the multi-agent system
+  **Mitigation**: Start with minimal viable agent architecture, then incrementally enhance based on actual performance
+
+- **Risk**: Poor quality of scraped data affecting response accuracy
+  **Mitigation**: Implement manual validation step for initial data ingestion, create data quality metrics
+
+## Resource Constraints
+- **Risk**: Limited compute resources for LLM inference
+  **Mitigation**: Optimize prompt lengths, implement caching for common queries, use efficient model parameters
+
+- **Risk**: ChromaDB performance with large document collections
+  **Mitigation**: Implement strategic chunking, optimize embedding dimensions, and use efficient similarity search
+
+- **Risk**: Development time constraints
+  **Mitigation**: Leverage existing libraries where possible, focus on core functionality first, use iterative development
+
+# Appendix
+
+## Key Information Sources
+- boAt Return Policy pages (URLs to be provided)
+- boAt Service Center location pages (URLs to be provided)
+- ChromaDB documentation: https://docs.trychroma.com/
+- AutoGen framework: https://microsoft.github.io/autogen/
+- Gemini API documentation: https://ai.google.dev/docs
+
+## Technical Requirements
+- Python 3.9+
+- FastAPI
+- ChromaDB
+- AutoGen
+- Gemini AI SDK
+- HTML/CSS/JavaScript
+- WebSockets
+
+## Implementation Notes
+- Chunks for vector database should maintain semantic coherence
+- Service center data should be structured to enable location-based queries
+- Focus on accurate attribution of all response information to maintain trust
+- User queries should be logged (anonymously) to improve system over time 
