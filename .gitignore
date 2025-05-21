@@ -18,6 +18,7 @@ build/
 
 # Data files
 data/chroma/
+data/debug
 
 # Logs
 *.log
@@ -54,23 +55,20 @@ tasks/
 # Task runner files
 task*_runner.py
 
-# Test data (if needed, remove this line)
-# test_data/
+# Test files
+test_data/
+test_database.py
+test_direct_loader.py
 
 # Temporary files
 *.tmp
-*.temp est
-test_database.py
-test_direct_loader.py
-test_data/
+*.temp
+*.tempest
+
+# JSON data files
 direct_return_policy.json
 direct_service_centers.json
 return_policy.json
 service_centers.json
 gemini_processed.json
 playwright_service_centers.json
-gemini_processed.json
-playwright_service_centers.json
-gemini_processed.json
-playwright_service_centers.json
-data/debug
