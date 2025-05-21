@@ -1,0 +1,470 @@
+[
+  {
+    "state": "Delhi NCR",
+    "locations": [
+      {
+        "name": "LOTUS COMPUTECH",
+        "address": "308, IIIrd Floor, DDA Building No.- 5, District Centre, Janakpuri, New Delhi - 110058 110058",
+        "contact": ""
+      },
+      {
+        "name": "Vaishno communication",
+        "address": "First Floor, Nil-26/Ab, Malviya Nagar, New Delhi,South Delhi, Delhi, 110017 110017",
+        "contact": ""
+      },
+      {
+        "name": "F1 - Delhi-Multibrand",
+        "address": "46-9-26, BY PASS ROAD, DANAVAIPETA,RAJAHMUNDRY,East Godavari, Andhra Pradesh, 533103 110024",
+        "contact": ""
+      },
+      {
+        "name": "Mayday-boAt Exclusive Service Center",
+        "address": "E-55, A First Floor, Plot E-55 and E-56, Jawahar Park, Near Hira Sweets, Laxmi Nagar, Delhi 110092",
+        "contact": ""
+      },
+      {
+        "name": "boAt Exclusive service center-Servexplus (Karol Bagh",
+        "address": "New Delhi), 7018-7019 , Plot No.9, Block N-14B, First Floor , Deshbandhu Gupta Road, New Delhi ,Karol Bagh 110005 110005",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Punjab",
+    "locations": [
+      {
+        "name": "F1 NETWORK BUSNIESS GROUP",
+        "address": "S.C.O. 45, Leela Bhawan Market, Behind Gopal Sweets,Patiala-147001 147001",
+        "contact": ""
+      },
+      {
+        "name": "Fateh International",
+        "address": "Shop No. 4,8/1, Opposite All India Radio Stn. Near Lajwanti Hospital, Jalandhar, 144001 144001",
+        "contact": ""
+      },
+      {
+        "name": "F1 - Chandigarh-Multibrand",
+        "address": "",
+        "contact": ""
+      },
+      {
+        "name": "F1 - Ludhiana-Multibrand",
+        "address": "1St Floor, B-18, M.C No. 432-R, Model Town, Ludhiana, Punjab-141002, 141002",
+        "contact": ""
+      },
+      {
+        "name": "BT-K.A. Sahni Enterprises (Amritsar",
+        "address": "PB), Shop No.G10, Second Floor, Ganpati Tower, Lawrance Road, Amritsar, Punjab 143001",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Uttar Pradesh",
+    "locations": []
+  },
+  {
+    "state": "West Bengal",
+    "locations": []
+  },
+  {
+    "state": "Haryana",
+    "locations": [
+      {
+        "name": "Golden Telecom",
+        "address": "1st Floor, SCF-2, M C Area, (Near HDFC Bank). Red Square Market, Railway Road,Hisar 125001",
+        "contact": ""
+      },
+      {
+        "name": "Rudra Communication",
+        "address": "Bawa Trana Road 73/11 1St Floor Near Reliance Smart Mall & Petrol Pump Sonipat - 131001 131001",
+        "contact": ""
+      },
+      {
+        "name": "Yadav communication",
+        "address": "Shop No-241, Main Market Sector-5, Opposite Bmg Mall, Rewari - 123401 123401",
+        "contact": ""
+      },
+      {
+        "name": "F1 - Karnal-Sony/Multibrand",
+        "address": "TC21/857,NCC Road,POOMALLIYOORKONAM,peroorkada,trivandrum,thiruvananthapuram,kerala 132001",
+        "contact": ""
+      },
+      {
+        "name": "F1 - Gurgaon-Multibrand",
+        "address": "No.43,Ground Floor Of City Court Mall At Sikanderpur, Gurgaon, Haryana 122002 122002",
+        "contact": ""
+      },
+      {
+        "name": "MR SOLUTIONS",
+        "address": "2267/3 Old Delhi Road,opp.icic bank sec-14 gurgaon -122001 122001",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Bihar",
+    "locations": [
+      {
+        "name": "Sonu Communication",
+        "address": "Nutan Niwash, G C Benerjee Road, Bhikhanpur, Bhagalpur Beside Gungun Littil Mall, Opp : - Dr B D Singh,District- Bhagalpur,Bihar - 812001 812001",
+        "contact": ""
+      },
+      {
+        "name": "Mayday-boAt Exclusive Service Center",
+        "address": "Unit No G-04, Ground Floor, Yunus Corporate Building, Behind Croma Store, SP Verma Road, Patna 800001",
+        "contact": ""
+      },
+      {
+        "name": "KRISH ENTERPRISES",
+        "address": "KACCHI SARAI ROAD, NEAR KANHAULI NAKA, MUZAFFARPUR-842001, BIHAR 842001",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Gujarat",
+    "locations": [
+      {
+        "name": "Balaji Infocom",
+        "address": "Shop no 104,Aashish Commercial Complex, NR.Astron Cinema, Sardar nagar, Rajkot, Gujarat 360001 360001",
+        "contact": ""
+      },
+      {
+        "name": "MOBILE EXPRESS",
+        "address": "",
+        "contact": ""
+      },
+      {
+        "name": "VIRTUAL INFOSHOP",
+        "address": "SF-229, Vip View Complex, Opp. Bright School, Near Amit Nagar Flyover, Vip Road, Vadodara 390018",
+        "contact": ""
+      },
+      {
+        "name": "Mayday-boAt Exclusive Service Center",
+        "address": "222, Jai Uttam Complex, Shop no 1 to 3 & Upper Ground Floor, Near Sub Jail, Khatodra 395002",
+        "contact": ""
+      },
+      {
+        "name": "BT-Rudra Communication (Vapi",
+        "address": "GJ), Anmol Tower,Shop No 107,1st Floor,Vapi silvassa main road, vapi 396195",
+        "contact": ""
+      },
+      {
+        "name": "RV-boAt Exclusive Service Center",
+        "address": "318, 3rd floor, advait complex opp soham tower, near sandesh press Aastrapur Ahmedabad 380054 380054",
+        "contact": ""
+      },
+      {
+        "name": "BT-Vatsal Infotech (Bhavnagar",
+        "address": "Gujrat), G-216, Hans Complex, Sanskar Mandal, Talaja Road, Bhavnagar, Gujrat 364002",
+        "contact": ""
+      },
+      {
+        "name": "boAt Exclusive service center-Servex ahemdabad",
+        "address": "Shop no.123, 1st floor pushkar Business park, nr. Star Hospital, Lbh road, Bapu nagar, Ahmedabad 380024 380024",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Rajasthan",
+    "locations": [
+      {
+        "name": "SIMPLEX ELECTRONICS",
+        "address": "",
+        "contact": ""
+      },
+      {
+        "name": "Shri Shyam Enterprises",
+        "address": "F7 First Floor Amar Plaza, Opposite Daulat baug, Kalabaug, Ajmer - 305001 305001",
+        "contact": ""
+      },
+      {
+        "name": "F1 - Jaipur-Multibrand",
+        "address": "3Rd Floor At Man Upasna Mall , Plot No. C-44 Sardar Patel Marg,C-Scheme, Jaipur. Rajasthan – 302001 302001",
+        "contact": ""
+      },
+      {
+        "name": "Diya Electronics, 20--C Shopping Center, Kota 324007",
+        "address": "",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Jammu & Kashmir",
+    "locations": []
+  },
+  {
+    "state": "Maharashtra",
+    "locations": [
+      {
+        "name": "Technotronics Technologies",
+        "address": "Office No 106, 1St Floor, Rani Mansion Below Income Tax Office, Behind Ration Office, Murbad Rd, Kalyan West, Thane - 421301 421301",
+        "contact": ""
+      },
+      {
+        "name": "Shri Sai Telecom And Laptop - Shivaji Nagar",
+        "address": "Office no 202-B , 2nd Floor Nana Saheb Pasalkar Bhavan , Above Bharat Gas Agency ,Court Road , Next to Family Court Building , Shivaji Nagar Pune 411005 411005",
+        "contact": ""
+      },
+      {
+        "name": "BHAGWATI TELECOM",
+        "address": "Shop A 02, Ground Floor, Parijat apartment, Gouthan Road, Station road Virar West. 401303",
+        "contact": ""
+      },
+      {
+        "name": "It Solution",
+        "address": "26-D, Ph Market, Opp Sanmitra Urban Bank, Tilak Road, Akola 444001 444001",
+        "contact": ""
+      },
+      {
+        "name": "BRAHMAYANI ENTERPRISES",
+        "address": "1st Floor Aryan Center Above Axis Bank Pune-Solapur Road Hadapsar Pune Maharashtra 411028",
+        "contact": ""
+      },
+      {
+        "name": "New Tirupati Cellulars-Hinjewadi",
+        "address": "Shop No :205 The Address Commercial, Survey No 16/17 Shankar kalate nagar, Near Bhujbal Chowk, Hinjewadi Wakad Road,Wakad Pune 411057 411057",
+        "contact": ""
+      },
+      {
+        "name": "RITU MOBILE CARE",
+        "address": "Shop No.101 1St Floor, Paras Plaza opp Railway Station, near chandrani medical, Boisar, Maharashtra 401501 401504",
+        "contact": ""
+      },
+      {
+        "name": "Alraza Mobile Service Center",
+        "address": "SHOP NO 10,11 JANKI MARKET BUILDING NETAJI PHOOL MARKET SITABARDI NAGPUR MAHARASHTRA – 440012 440012",
+        "contact": ""
+      },
+      {
+        "name": "Mayday-boAt Exclusive Service Center",
+        "address": "Unit No 302, 3rd Floor, Fenkin Empire, Chatrapati Shivaji Road, Chendani, Thane West 400601",
+        "contact": ""
+      },
+      {
+        "name": "Mayday-boAt Exclusive Service Center",
+        "address": "Shop No 12, Enkay Heritage Co-Op Hsg. Soc. Ltd., Plot No 403, T.P.S. Station Road, Panvel Dist. Raigad 410206",
+        "contact": ""
+      },
+      {
+        "name": "boAt Exclusive service center-Ghatkopar",
+        "address": "Office No. 109 ,1st Floor, Jyoti Chambers CSL, Plot Number:9 TPS-III , Near BataShowroom,Ghatkopar West, Mumbai 400086",
+        "contact": ""
+      },
+      {
+        "name": "Mayday-boAt Exclusive Service Center",
+        "address": "Shop No. - 2,3, Stella Chandak, Udyog Nagar, Goregaon West 400104",
+        "contact": ""
+      },
+      {
+        "name": "Mayday-boAt Exclusive Service Center",
+        "address": "",
+        "contact": ""
+      },
+      {
+        "name": "BT-Reliable Enterprises (Pune",
+        "address": "MH), Shop No.10, A-Wing, Jai Ganesh Vision, Near Suvrnayug Sahakari Bank, Akurdi, Pune, Maharashtra 411035",
+        "contact": ""
+      },
+      {
+        "name": "BT-G X Perfect Mobile (Latur",
+        "address": "MH), New Gandhi Market, Shop No. 202, 203, Side No. 112, Near Vilas Co Bank, Latur, Maharashtra 413512",
+        "contact": ""
+      },
+      {
+        "name": "BT-Telephone House (Ahmednagar",
+        "address": "MH), G-17, Guru Ganesh Complex, Vasant Talkies Road, Maliwad, Near Chandukaka Jwellery Shop, Maliwada, Ahmednagar, Maharashtra 414001",
+        "contact": ""
+      },
+      {
+        "name": "BT-Shri Telecom (Kolhapur",
+        "address": "Maharashtra), 1170-E, Shivshakti Terraces, Shop No.1, Near Purva Hospital, Rajaram Road, Kolhapur, Maharashtra 416008",
+        "contact": ""
+      },
+      {
+        "name": "RV MSC Nashik",
+        "address": "",
+        "contact": ""
+      },
+      {
+        "name": "boAt Exclusive service center-RV Dadar",
+        "address": "POPATLAL BLDG, RANADE ROAD,NEXT TO WAMAN HARI PETHE JEWELLERS, ABOVE RANGILA STATIONERY DADAR W OPP PANSHIKAR SWEET, Mumbai, Maharashtra 400028 400028",
+        "contact": ""
+      },
+      {
+        "name": "BT-WINTEL SOLUTIONS",
+        "address": "D-202,First floor, Freedom Towers, Akashwani Chowk, Jalna Road, Behind Asian Hospital 431001",
+        "contact": ""
+      },
+      {
+        "name": "MAYDAY-Pune",
+        "address": "Showroom No. 1, ASPIRO, CTS No. 4705, Opposite Thyssenkrupp Company, Station Road, Pimpri 411018",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Assam",
+    "locations": [
+      {
+        "name": "Mayday-boAt Exclusive Service Center",
+        "address": "Ground Floor, House No 10, Main Road, Tarun Nagar, Guwahati, Kamrup Metropolitan ,Assam 781005",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Telangana",
+    "locations": [
+      {
+        "name": "S V COMMUNICATIONS",
+        "address": "Door No : 6-2-712/17, Shop No’S : 9 & 10,Ground Floor,Suryalok Complex, Hyderabad Road,Nalgonda,Telangana - 508001 508001",
+        "contact": ""
+      },
+      {
+        "name": "LOTUS TECHNOLOGIES",
+        "address": "1St Floor, 5-9-88/4/A, Aak Complex,Fatehmaidan,Abids, Opp Klk Building, Hyderabad, Telangana, 500001 500001",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Karnataka",
+    "locations": [
+      {
+        "name": "Repairtech Solutions",
+        "address": "#102, 1st floor, Sri Krishna Complex, 10th Main Rd,  Jayanagar 3rd Block, Bengalore, Karnataka 560011  560011",
+        "contact": ""
+      },
+      {
+        "name": "Rachotashwar Communication",
+        "address": "#389, 1st Floor,(Above Navkar Jewellers),Sampige Road, 8th Cross Malleshwaram,Bangalore-560003 560003",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Tamil Nadu",
+    "locations": []
+  },
+  {
+    "state": "Kerala",
+    "locations": [
+      {
+        "name": "SA COMPUTER WORLD",
+        "address": "Sarangi Tower, Near Ioc Pump, Ponmudi Road Rajakkad,Idukki - 685566 685566",
+        "contact": ""
+      },
+      {
+        "name": "Cyber Space",
+        "address": "61/2709,Ravipuram Road Ravipuram Cochin 682016 682016",
+        "contact": ""
+      },
+      {
+        "name": "INFOBEAT SYSTEMS",
+        "address": "Infobeat Systems ,S & S Complex,Shornur Road, Thrissur-680001 680022",
+        "contact": ""
+      },
+      {
+        "name": "Poovath International",
+        "address": "1 St Floor, Kunjalus Place, P.T Usha Road, Opposite Maharajas Collage Stadium, Cochin, Kerala - 682011 Ph - 9846075777 , 9846075777 ,Pincode - 682011 682011",
+        "contact": ""
+      },
+      {
+        "name": "BT-ACME Technologies (Palakkad",
+        "address": "KL), 1st Floor, Metro Complex, Opp. Govt. Ayurveda Hospital, Head Post Office Road, Palakkad, Kerala pin code- 678001 678001",
+        "contact": ""
+      },
+      {
+        "name": "White Feather Infosoft --Trivandrum",
+        "address": "TC21/857,NCC Road,POOMALLIYOORKONAM,peroorkada,trivandrum,thiruvananthapuram,kerala 695005",
+        "contact": ""
+      },
+      {
+        "name": "PG TECH",
+        "address": "Ground floor,  17/2462,  pg tech,  Residency Road,  nair's juntion ,  residency nagar, Kadappakkada,  Kollam,  Kollam,  Kerala, 691019 691019",
+        "contact": ""
+      },
+      {
+        "name": "SA COMPUTER WORLD KOTTAYAM",
+        "address": "KOTTAYAM – KUMILY ROAD,OPPOSITE JK HOSPITAL,VADAVATHOOR, KOTTAYAM 686010",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Jharkhand",
+    "locations": [
+      {
+        "name": "F1 - Ranchi-Multibrand",
+        "address": "M.S. Plot No. 1431/14, No. 468/F (old) & 0270000984000X1(new), PP Compound, Sujata Chowk, Main Road, Mouza-Hindiri, ward No. 27 (old) & 23 (New),Ranchi-834001 834001",
+        "contact": ""
+      },
+      {
+        "name": "TECH SOLUTION",
+        "address": "Hodling No 77A, 2Nd Floor, Tank Road, Naina Neha Palace ,Sakshi, Jamshedpur-831001 831001",
+        "contact": ""
+      },
+      {
+        "name": "MOBILE WORLD-DHANBAD",
+        "address": "",
+        "contact": ""
+      },
+      {
+        "name": "BT-Maa Gauri Services (Ranchi",
+        "address": "JH), Opp. Indusind Bank, Circular Road, Near Hotel Landmark, Lalpur Chowk, Ranchi, Jharkhand 834001",
+        "contact": ""
+      },
+      {
+        "name": "BT-Aarav Services (Dhanbad",
+        "address": "JH), BANK MORE KARBALA ROAD, NEAR HOTEL CLASSIC, BASANT KUNJ 2nd FLOOR. 826001",
+        "contact": ""
+      },
+      {
+        "name": "BT-Maa Gayatri Telecom (Bokaro Steel City",
+        "address": "JH), Plot No.HF-7, City Centre, Sector-4, Near Sachha Darbar Mandir, Bokaro Steel City, Jharkhand 827004",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Odisha",
+    "locations": [
+      {
+        "name": "WE CARE, Hall No 1A,First Floor,Udayan Shopping Complex.Udit Nagar",
+        "address": ",Rourkela-769012 769012",
+        "contact": ""
+      },
+      {
+        "name": "TELECONNECT",
+        "address": "",
+        "contact": ""
+      }
+    ]
+  },
+  {
+    "state": "Madhya Pradesh",
+    "locations": []
+  },
+  {
+    "state": "Andhra Pradesh",
+    "locations": []
+  },
+  {
+    "state": "Uttarakhand",
+    "locations": []
+  },
+  {
+    "state": "Chhattisgarh",
+    "locations": [
+      {
+        "name": "F1 - Raipur- Multibrand",
+        "address": "2Nd Floor Tara Sadan, Opp. Marline Apt. Mandi Road, Sector 5, Devendra Nagar, Raipur-492009 492009",
+        "contact": ""
+      }
+    ]
+  }
+]

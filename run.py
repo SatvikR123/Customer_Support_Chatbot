@@ -1,5 +1,15 @@
 """
 Main entry point to run the boAt Customer Support Chatbot application.
+
+This script provides commands to:
+1. Run the web scraper to fetch information from boAt's website
+2. Process scraped content directly into the vector database
+3. Run the FastAPI server for the chatbot interface
+
+The application uses ChromaDB as its vector database with embeddings 
+generated directly from scraped content without requiring the Gemini API.
+This direct loading approach processes raw scraped content into structured
+information suitable for vector storage and retrieval.
 """
 import os
 import sys
@@ -117,46 +127,28 @@ def scrape_data():
             text=True
         )
         logger.info(f"Web scraper output:\n{result.stdout}")
+        return {"status": "success", "message": "Scraping completed successfully"}
         
-        # Now run the Gemini processor to get structured data
-        try:
-            gemini_processor_path = Path(__file__).parent / "src" / "utils" / "gemini_processor.py"
-            if gemini_processor_path.exists():
-                logger.info(f"Running Gemini processor {gemini_processor_path}")
-                proc_result = subprocess.run(
-                    [sys.executable, str(gemini_processor_path)],
-                    check=True,
-                    capture_output=True,
-                    text=True
-                )
-                logger.info(f"Gemini processor output:\n{proc_result.stdout}")
-            else:
-                logger.warning(f"Gemini processor not found at {gemini_processor_path}")
-        except subprocess.CalledProcessError as e:
-            logger.error(f"Error running Gemini processor: {e}")
-            logger.error(f"Stderr: {e.stderr}")
     except subprocess.CalledProcessError as e:
         logger.error(f"Error running web scraper: {e}")
         logger.error(f"Stderr: {e.stderr}")
         return {"error": f"Error running web scraper: {e.stderr}"}
-    
-    return {"status": "success", "message": "Scraping completed successfully"}
 
 def build_vector_db():
-    """Build the vector database from scraped data using the data pipeline"""
-    # Import the data pipeline
-    from src.utils.data_pipeline import DataPipeline
+    """Build the vector database from scraped data using the direct loader"""
+    # Import the DirectLoader
+    from src.utils.direct_loader import DirectLoader
     
-    logger.info("Building vector database using data pipeline")
+    logger.info("Building vector database using direct loader")
     
-    # Create a data pipeline instance
-    pipeline = DataPipeline()
+    # Create a DirectLoader instance
+    loader = DirectLoader()
     
-    # Run the pipeline with validation
-    success = pipeline.run_pipeline(validate=True, verbose=True)
+    # Run the direct loading pipeline
+    success = loader.run_pipeline()
     
     if success:
-        logger.info("Vector database built successfully using data pipeline")
+        logger.info("Vector database built successfully using direct loader")
         return {"status": "success", "message": "Vector database built successfully"}
     else:
         logger.error("Failed to build vector database")
@@ -167,6 +159,7 @@ def main():
     parser = argparse.ArgumentParser(description="boAt Customer Support Chatbot")
     parser.add_argument("--scrape", action="store_true", help="Run the web scraper to fetch data")
     parser.add_argument("--build-db", action="store_true", help="Build the vector database from scraped data")
+    parser.add_argument("--direct-load", action="store_true", help="Directly load scraped content to vector database without Gemini processing")
     parser.add_argument("--serve", action="store_true", help="Start the FastAPI server")
     parser.add_argument("--all", action="store_true", help="Run everything: scrape, build DB, and start server")
     # Add arguments from task6_runner.py for server configuration
@@ -196,7 +189,7 @@ def main():
     if args.scrape:
         scrape_data()
     
-    if args.build_db:
+    if args.build_db or args.direct_load:
         build_vector_db()
     
     if args.serve:

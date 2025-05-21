@@ -9,6 +9,7 @@ This project implements a RAG system using ChromaDB as its vector database for s
 ## Features
 
 - Text preprocessing of scraped content using Google's Gemini API
+- Direct loading of scraped content to vector database (bypassing Gemini API)
 - Data validation to ensure quality of processed information
 - Vector database storage using ChromaDB with SentenceTransformer embeddings
 - Query classification to route questions to the appropriate information source
@@ -28,8 +29,11 @@ This project implements a RAG system using ChromaDB as its vector database for s
 │       ├── data_pipeline.py # Data processing pipeline
 │       ├── data_validator.py # Data validation utilities
 │       ├── gemini_processor.py # Text processing with Gemini
+│       ├── direct_loader.py # Direct processing without Gemini
 │       └── test_pipeline.py # Test utilities
 ├── test_database.py         # Test script for database functionality
+├── test_direct_loader.py    # Test script for direct loader functionality
+├── direct_load.py           # Script to run direct loading pipeline
 └── task3_runner.py          # Runner for Task 3 demonstration
 ```
 
@@ -57,7 +61,7 @@ This project implements a RAG system using ChromaDB as its vector database for s
 
 4. Create a `.env` file with your API keys:
    ```
-   GOOGLE_API_KEY=your_gemini_api_key
+   GOOGLE_API_KEY=your_gemini_api_key  # Only needed if using Gemini processing
    CHROMA_PERSIST_DIRECTORY=./data/chroma
    ```
 
@@ -75,6 +79,27 @@ Or with your own scraped data placed in the `data/` directory:
 
 ```bash
 python task3_runner.py setup
+```
+
+### Direct Loading Without Gemini API
+
+To bypass the Gemini API processing and load scraped content directly into the vector database:
+
+```bash
+python direct_load.py
+```
+
+This process uses local text processing to:
+
+1. Read the scraped content from `data/scraped_content.json`
+2. Process return policy information by identifying key sections
+3. Extract service center details with their locations
+4. Generate embeddings and store them in ChromaDB
+
+To test the direct loader functionality:
+
+```bash
+python test_direct_loader.py
 ```
 
 ### Testing the Database
@@ -118,6 +143,7 @@ python task3_runner.py rag --question "What is boAt's return policy for damaged 
 ### Data Ingestion Pipeline
 
 - Process scraped data using Gemini API to structure the information
+- Alternatively, use direct loader to process data locally without API calls
 - Validate data structure and content using schema validation
 - Transform processed data into vector-ready documents
 - Load documents into appropriate ChromaDB collections
@@ -132,7 +158,7 @@ python task3_runner.py rag --question "What is boAt's return policy for damaged 
 
 - Python 3.8+
 - ChromaDB
-- Google Generative AI (Gemini)
+- Google Generative AI (Gemini) - optional with direct loader
 - Sentence Transformers
 
 ## License
