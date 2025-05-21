@@ -62,7 +62,7 @@ class AgentSystem:
             if api_key:
                 self.config_list = [
                     {
-                        "model": "gemini-1.5-flash",
+                        "model": "gemini-2.0-flash",
                         "api_key": api_key,
                         "api_type": "google",
                     }

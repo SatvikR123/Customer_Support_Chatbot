@@ -19,7 +19,7 @@
         "Orders can be cancelled before shipment.",
         "Cancellation is not possible once the order is shipped."
       ],
-      "return_policy_summary": "Products can be replaced within 7 days of delivery if defective or damaged upon arrival and in original condition.  Refunds are processed within 7-10 business days after return. Orders can be cancelled before shipment only."
+      "return_policy_summary": "Products can be replaced within 7 days of delivery if defective or damaged upon arrival and in original condition.  Refunds are processed within 7-10 business days after product return. Orders can be cancelled before shipment but not afterward."
     }
   },
   {

@@ -6,22 +6,22 @@
     "structured_content": {
       "replacement_timeframe": 7,
       "replacement_conditions": [
-        "Product received is defective",
-        "Product has physical damage (reported within 24 hours of receipt)",
-        "Product is not functioning properly (within 7 days of delivery)",
-        "Product received is not as shown on the site or as per specifications (reported within 24 hours of receipt)"
+        "Product delivered in defective condition within 24 hours of receipt",
+        "Product has physical damage within 24 hours of receipt",
+        "Product delivered is not functioning properly within 7 days from the date of delivery",
+        "Product received is not as shown on the site or as per the specifications (reported within 24 hours)"
       ],
       "non_replacement_conditions": [
-        "Customer is unhappy with the look/sound quality of a defect-free product",
+        "Customer is not happy with the look/sound quality of a defect free product",
         "Physical damage not notified within 24 hours of receiving the product",
-        "Damage caused by an electrical surge or user error"
+        "An electrical surge or any damage caused by the user"
       ],
       "cancellation_conditions": [
-        "Orders already communicated to the customer and shipping initiated",
-        "Orders placed under Same Day Delivery",
-        "Products obtained on special occasions (limited occasion offers)"
+        "Cancellations not entertained if orders have already been communicated to customers and shipping has been initiated",
+        "No cancellation of orders placed under the Same Day Delivery category",
+        "No cancellations are entertained for products obtained on special occasions"
       ],
-      "return_policy_summary": "Replacements are allowed within 7 days of delivery for defective or damaged products, or if the product doesn't match the website description.  Replacements are not allowed for issues with look/sound quality or user-caused damage. Cancellations are generally not allowed after shipping has begun, for same-day deliveries, or for special occasion purchases.  Refunds are not provided, but a replacement may be offered within the timeframe."
+      "return_policy_summary": "boAt primarily offers replacements for defective or damaged products reported within specified timeframes. Returns and refunds are generally not provided, but replacements are offered within 7 days for eligible cases. Cancellations are allowed before shipping, excluding Same Day Delivery and special occasion orders. Report issues within 24 hours."
     }
   },
   {
@@ -52,11 +52,10 @@
         "Uttarakhand",
         "Chhattisgarh"
       ],
-      "service_hours": null,
+      "service_hours": "Not specified in provided content.",
       "holiday_info": "Service centers will remain shut on Sundays and National holidays.",
       "contact_details": {
-        "address": "Unit no. 204 & 205, 2nd floor, D-wing & E-wing, Corporate Avenue, Andheri Ghatkopar Link Road, Mumbai, Maharashtra-400093, India",
-        "name": "Manager, Imagine Marketing Limited"
+        "address": "Manager, Imagine Marketing Limited\nUnit no. 204 & 205, 2nd floor, D-wing & E-wing,\nCorporate Avenue, Andheri Ghatkopar Link Road,\nMumbai, Maharashtra-400093, India"
       }
     }
   }

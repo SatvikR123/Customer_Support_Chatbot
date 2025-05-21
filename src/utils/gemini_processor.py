@@ -50,7 +50,7 @@ class GeminiProcessor:
         genai.configure(api_key=self.api_key)
         
         # Get the model (using Gemini Pro as default)
-        self.model = genai.GenerativeModel('gemini-1.5-flash')
+        self.model = genai.GenerativeModel('gemini-2.0-flash')
     
     def process_return_policy(self, content: str) -> Dict[str, Any]:
         """

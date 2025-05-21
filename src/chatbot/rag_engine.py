@@ -48,7 +48,7 @@ class RAGEngine:
     """
     
     def __init__(self, 
-                 model_name: str = "gemini-1.5-flash",
+                 model_name: str = "gemini-2.0-flash",
                  temperature: float = 0.2,
                  top_k_results: int = 3):
         """

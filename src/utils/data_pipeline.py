@@ -9,12 +9,21 @@ data ready for vector database insertion.
 import os
 import json
 import logging
+import sys
 from typing import Dict, List, Any, Optional, Tuple
 from pathlib import Path
 
-# Import our custom modules
+# Add parent directory to Python path for relative imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(os.path.dirname(current_dir))
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
+# Import our custom modules using relative imports
 from src.utils.gemini_processor import GeminiProcessor
 from src.utils.data_validator import validate_processed_data_file, validate_vector_docs_file
+
+# Import vector store with absolute import (now that project_root is in sys.path)
 from src.database.vector_store import VectorStore
 
 # Setup logging

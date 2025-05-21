@@ -1,17 +1,23 @@
-                                                                                                                              <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>boAt Customer Support</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
-    <div class="chat-container">
+    <!-- Chat Widget Button -->
+    <div class="chat-widget-button" id="chat-widget-button">
+      <i class="fas fa-headset"></i>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chat-container">
       <div class="chat-header">
         <img
           src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/boat_logo_small.webp"
@@ -19,10 +25,14 @@
           class="logo"
         />
         <h1>boAt Customer Support</h1>
+        <div class="chat-controls">
+          <button id="minimize-button"><i class="fas fa-minus"></i></button>
+          <button id="close-button"><i class="fas fa-times"></i></button>
+        </div>
       </div>
 
       <div class="chat-messages" id="chat-messages">
-        <!-- Messages will be displayed here -->
+        <!-- Welcome message will be added via JavaScript -->
       </div>
 
       <div class="chat-input-container">
@@ -37,6 +47,6 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
   </body>
 </html>

@@ -43,7 +43,7 @@ class ResponseGenerator:
         try:
             # Initialize Gemini model
             if api_key:
-                model_name = "gemini-1.5-flash"  # Use a faster model for production
+                model_name = "gemini-2.0-flash"  # Use a faster model for production
                 self.model = genai.GenerativeModel(model_name)
                 logger.info(f"Response generator initialized with {model_name}")
             else:
