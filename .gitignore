@@ -59,4 +59,18 @@ task*_runner.py
 
 # Temporary files
 *.tmp
-*.temp 
+*.temp est
+test_database.py
+test_direct_loader.py
+test_data/
+direct_return_policy.json
+direct_service_centers.json
+return_policy.json
+service_centers.json
+gemini_processed.json
+playwright_service_centers.json
+gemini_processed.json
+playwright_service_centers.json
+gemini_processed.json
+playwright_service_centers.json
+data/debug
