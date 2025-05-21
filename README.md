@@ -173,10 +173,6 @@ python test_direct_loader.py
 - AutoGen
 - Additional requirements in requirements.txt
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Acknowledgements
 
 - boAt Lifestyle for inspiration
